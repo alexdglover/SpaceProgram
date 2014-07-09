@@ -1,0 +1,17 @@
+var SpaceProgram = {};
+SpaceProgram.Boot = function(game) {};
+SpaceProgram.Boot.prototype = {
+	preload: function() {
+		this.load.image('preloaderBg', 'img/loading-bg.png');
+		this.load.image('preloaderBar', 'img/loading-bar.png');
+	},
+	create: function() {
+		this.game.input.maxPointers = 1;
+		this.game.stage.scaleMode = Phaser.StageScaleMode.SHOW_ALL;
+		this.game.stage.scale.pageAlignHorizontally = true;
+		this.game.stage.scale.pageAlignVertically = true;
+		this.game.stage.scale.setScreenSize(true);
+		//this.game.physics.startSystem(Phaser.Physics.ARCADE);
+		this.game.state.start('Preloader');
+	}
+};

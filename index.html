@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Space Program</title>
+    <link rel="shortcut icon" href="favicon.png" type="image/x-icon" />
+    <style> body { margin: 0; background: #333; } </style>
+    <script src="src/phaser.min.js"></script>
+    <script src="src/Boot.js"></script>
+    <script src="src/Preloader.js"></script>
+    <script src="src/MainMenu.js"></script>
+    <script src="src/StoryHowto.js"></script>
+    <script src="src/Game.js"></script>
+</head>
+<body>
+<script>
+(function() {
+    var game = new Phaser.Game(800, 600, Phaser.CANVAS, 'game');
+    game.state.add('Boot', SpaceProgram.Boot);
+    game.state.add('Preloader', SpaceProgram.Preloader);
+    game.state.add('MainMenu', SpaceProgram.MainMenu);
+    game.state.add('StoryHowto', SpaceProgram.StoryHowto);
+    game.state.add('Game', SpaceProgram.Game);
+    game.state.start('Game');
+})();
+</script>
+</body>
+</html>
