@@ -242,8 +242,13 @@ SpaceProgram.Game.prototype = {
             var explosion = explosions.getFirstExists(false);
             explosion.reset(ship.body.x, ship.body.y);
             explosion.play('kaboom', 30, false, true);
-            this.game.state.start('MainMenu', true, true);
+            setTimeout(this.restartGame, 5000);    
         }
+    },
+
+    restartGame: function () {
+        launched = false;
+        this.game.state.start('Game', true, true);
     },
 
     setupShip: function (ship) {
